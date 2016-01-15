@@ -1,2 +1,2 @@
-# mochi
+# Mochi
 Handy components
