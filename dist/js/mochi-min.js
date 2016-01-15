@@ -1,0 +1,1 @@
+var mochi=function(){return this.version="0.1.0",{version:this.version}}();!function(a){a.carousel=function(){return this.playlist=[],{playlist:this.playlist}}}(mochi),console.log("hello mochi: ",mochi),console.log(mochi.carousel);

@@ -1,0 +1,20 @@
+{
+  "name": "Mochi",
+  "version": "0.1.0",
+  "homepage": "https://github.com/artamplified-studios/mochi",
+  "description": "A collection of handy components",
+  "keywords": [
+    "mochi"
+  ],
+  "authors": [
+    "Kiran Mertopawiro"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
