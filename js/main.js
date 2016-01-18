@@ -15,7 +15,7 @@ var Mochi = (function($) {
 	var about = {
 		version: '0.1.0',
 		author: 'Kiran Mertopawiro',
-		description: 'Named after my fluffy cat Mochi, a collection of usefull components';
+		description: 'Named after my fluffy cat Mochi, a collection of usefull components',
 	}
 
 	var deviceInfo = {
