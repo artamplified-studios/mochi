@@ -98,28 +98,28 @@ var Mochi = (function($) {
 		};
 
 		this.next = function(_previousID, _carouselID) {
-			console.log(_previousID, '_carouselID: ', _carouselID);
+			//console.log(_previousID, '_carouselID: ', _carouselID);
+			var previousID = _previousID;
 			
 			var settings = _mochi.list[_carouselID].settings;
-				settings.playCount++;
+				settings.previousID = _previousID;
+				settings.playCount = ((_previousID++) === ($(settings.element).find('li').length)-1)?0:_previousID++;
+				console.log(previousID);
 
-			$($(settings.element).find('.item').get(_previousID)).css({
+			$($(settings.element).find('.item').get(previousID)).css({
 				display:'none'
 			});
 
-
-			// // 	set next video to display="display"
+			// 	set next video to display="display"
 			$($(settings.element).find('.item').get(settings.playCount)).css({
 				display:'block'
 			});
 
-			
 			//	play next video
-			//console.log($($(settings.element).find('.item').get(settings.playCount)).find('video').get(0))
 			$($($(settings.element).find('.item').get(settings.playCount)).find('video')).get(0).play();
 
 			// //console.log('playlist:', this.playlist.length)
-			settings.playCount = (settings.playCount === ($(settings.element).find('li').length)-1?-1:settings.playCount);
+			//settings.playCount = (settings.playCount === ($(settings.element).find('li').length)-1?-1:settings.playCount);
 			//console.log('playCount', playCount)
 		}
 
