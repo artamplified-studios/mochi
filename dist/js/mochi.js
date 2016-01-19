@@ -40,7 +40,6 @@ var Mochi = (function($) {
 */
 
 (function( _mochi ) {
-	//console.log( _mochi );
 
 	if(typeof(jQuery) === 'undefined') {
 		return false;
@@ -98,13 +97,13 @@ var Mochi = (function($) {
 		};
 
 		this.next = function(_previousID, _carouselID) {
-			//console.log(_previousID, '_carouselID: ', _carouselID);
+
 			var previousID = _previousID;
 			
 			var settings = _mochi.list[_carouselID].settings;
 				settings.previousID = _previousID;
 				settings.playCount = ((_previousID++) === ($(settings.element).find('li').length)-1)?0:_previousID++;
-				console.log(previousID);
+
 
 			$($(settings.element).find('.item').get(previousID)).css({
 				display:'none'
@@ -118,9 +117,6 @@ var Mochi = (function($) {
 			//	play next video
 			$($($(settings.element).find('.item').get(settings.playCount)).find('video')).get(0).play();
 
-			// //console.log('playlist:', this.playlist.length)
-			//settings.playCount = (settings.playCount === ($(settings.element).find('li').length)-1?-1:settings.playCount);
-			//console.log('playCount', playCount)
 		}
 
 		return {
@@ -133,6 +129,8 @@ var Mochi = (function($) {
 
 	var instance = [];
 
+	//	check for multiple elements of type .video-carousel
+	//	create new object of type carousel and push to list
 	$.each($('.video-carousel'), function(_index, _element) {
 
 		var element = Object.create(_mochi.carousel, {
@@ -140,15 +138,14 @@ var Mochi = (function($) {
 			element: {value: _element}
 		});
 
-		_mochi.list.push(element);
+		instance.push(element);
 
 		element.init();
 		element.list = instance;
 
-		
-
 	});
 
-	//console.log(instance[0]);
+	_mochi.list = instance;
+
 
 })(Mochi);
