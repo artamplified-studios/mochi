@@ -15,7 +15,11 @@ var Mochi = (function($) {
 	var about = {
 		version: '0.1.0',
 		author: 'Kiran Mertopawiro',
+<<<<<<< HEAD
 		description: 'Named after my fluffy cat Mochi, a collection of usefull components',
+=======
+		description: 'Named after my fluffy cat Mochi, a collection of usefull components'
+>>>>>>> development
 	}
 
 	var deviceInfo = {
@@ -25,10 +29,13 @@ var Mochi = (function($) {
 		documentHeight: $(window).height()
 	}
 
+	var list = [];
+
 
 	return {
 		about: 			about,
-		deviceInfo: 	deviceInfo
+		deviceInfo: 	deviceInfo,
+		list: 			list
 	}
 
 })(jQuery);
