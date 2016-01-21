@@ -1,0 +1,12 @@
+#ignore files
+tests/
+
+#depedencies
+node_modules/*
+bower_components/*
+
+*.DS_Store
+
+#test files
+tests/*
+public/*
